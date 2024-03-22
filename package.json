@@ -1,0 +1,16 @@
+{
+  "name": "projet-bidon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Les tests passent\"",
+    "start": "node index.js",
+    "build": "echo \"Je build mon application\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.30.1"
+  }
+}
