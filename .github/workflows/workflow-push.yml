@@ -1,5 +1,6 @@
 name: Workflow lors d'un push
-on: push:
+on: 
+  push:
 jobs:
   mon_job:
     name: Build teste et run mon application
@@ -28,7 +29,7 @@ jobs:
           echo "On peut ajouter du markdown dans le fichier d'environnement GITHUB_STEP_SUMMARY. Il s'affichera sur la page de résumé d'une exécution de workflow." >> $GITHUB_STEP_SUMMARY
           echo "On pourrait par exemple y afficher les résultats de nos tests." >> $GITHUB_STEP_SUMMARY
 
-mon_2e_job:
+  mon_2e_job:
     name: Affichage des résultats de test
     needs: mon_job
     runs-on: ubuntu-latest
