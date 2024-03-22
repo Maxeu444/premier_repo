@@ -17,7 +17,9 @@ jobs:
       - name: installation des node_modules
         run: npm ci
       - name: test
+        id: run-test
         run: npm run test
+      - run: echo ${{ steps.run-test.outcome }}
       - name: build
         run: npm run build
       - name: start
@@ -29,11 +31,11 @@ jobs:
           echo "On peut ajouter du markdown dans le fichier d'environnement GITHUB_STEP_SUMMARY. Il s'affichera sur la page de résumé d'une exécution de workflow." >> $GITHUB_STEP_SUMMARY
           echo "On pourrait par exemple y afficher les résultats de nos tests." >> $GITHUB_STEP_SUMMARY
 
-  mon_2e_job:
-    name: Affichage des résultats de test
-    needs: mon_job
-    runs-on: ubuntu-latest
-    steps:
-      - name: Affichage des résultats
-        run: |
-          echo "Résultat des tests du job 1 : ${{ needs.mon_job.steps.test.outcome }}"
+  # mon_2e_job:
+  #   name: Affichage des résultats de test
+  #   needs: mon_job
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Affichage des résultats
+  #       run: |
+  #         echo "Résultat des tests du job 1 : ${{ needs.mon_job.steps.test.outcome }}"
