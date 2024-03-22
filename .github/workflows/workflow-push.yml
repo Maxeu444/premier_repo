@@ -27,16 +27,15 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "On peut ajouter du markdown dans le fichier d'environnement GITHUB_STEP_SUMMARY. Il s'affichera sur la page de résumé d'une exécution de workflow." >> $GITHUB_STEP_SUMMARY
           echo "On pourrait par exemple y afficher les résultats de nos tests." >> $GITHUB_STEP_SUMMARY
-    
 
-      mon_2e_job:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout repository
+  mon_2e_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
         uses: actions/checkout@v2
-        - name: Install dependencies
+      - name: Install dependencies
         run: npm install
-        - name: Run tests
+      - name: Run tests
         run: npm run test
 
   
